@@ -36,6 +36,7 @@ public class queuelinkedlist{
             System.out.print(temp.data + " : ");
             temp = temp.next;
         }
+        System.out.print("Null");
     }
     public static void main(String args[]){
         queuelinkedlist q = new queuelinkedlist();
