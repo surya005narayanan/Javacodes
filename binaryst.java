@@ -30,6 +30,23 @@ class binaryst{
         System.out.print(root.data+" ");
         inorder(root.right);
     }
+    public static TreeNode delete(TreeNode root, int val){
+        if(root==null) return null;
+        if(val < root.data){
+            root.left =delete(root.left,val);
+        }
+        else if(val > root.data){
+            root.right = delete(root.right,val);
+        }
+        else{
+            if(root.left == null) return root.right;
+            if(root.right==null) return root.left;
+            TreeNode successor = inordersuccessor(root.right);
+            root.data=successor.data;
+            root.right= delete(root.right,susccesor.data);
+        }
+        return root;
+    }
     public static boolean search(TreeNode root, int key){
         if(root == null){
             return false;
