@@ -43,9 +43,15 @@ class binaryst{
             if(root.right==null) return root.left;
             TreeNode successor = inordersuccessor(root.right);
             root.data=successor.data;
-            root.right= delete(root.right,susccesor.data);
+            root.right= delete(root.right,successor.data);
         }
         return root;
+    }
+    public static TreeNode inordersuccessor(TreeNode root){
+    while(root.left != null){
+        root = root.left;
+    }
+    return root;
     }
     public static boolean search(TreeNode root, int key){
         if(root == null){
@@ -70,6 +76,8 @@ class binaryst{
         inorder(root);
         System.out.println();
         System.out.println(search(root,8));
-
+        delete(root,5);
+        inorder(root);
+        System.out.println();
     }
 }
