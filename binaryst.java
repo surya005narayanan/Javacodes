@@ -33,7 +33,7 @@ class binaryst{
     public static TreeNode delete(TreeNode root, int val){
         if(root==null) return null;
         if(val < root.data){
-            root.left =delete(root.left,val);
+            root.left = delete(root.left,val);
         }
         else if(val > root.data){
             root.right = delete(root.right,val);
